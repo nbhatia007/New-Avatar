@@ -1,17 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --navy:      #0A1628;
-  --navy-mid:  #0F2040;
-  --navy-light:#162845;
-  --gold:      #C9A84C;
-  --gold-light:#E2C87A;
-  --gold-dark: #A8883A;
-  --white:     #FFFFFF;
-  --gray-100:  #F5F5F5;
-  --gray-300:  #D1D5DB;
-  --gray-500:  #6B7280;
-  --gray-700:  #374151;
+  --navy:       #0A1628;
+  --navy-mid:   #0D1E38;
+  --navy-light: #162845;
+  --gold:       #C9A84C;
+  --gold-light: #E2C87A;
+  --gold-dark:  #A8883A;
+  --white:      #FFFFFF;
+  --gray-100:   #F5F5F5;
+  --gray-300:   #D1D5DB;
+  --gray-400:   #9CA3AF;
+  --gray-500:   #6B7280;
+  --gray-700:   #374151;
 }
 
 @theme inline {
@@ -21,8 +22,8 @@
   --color-gold:       var(--gold);
   --color-gold-light: var(--gold-light);
   --color-gold-dark:  var(--gold-dark);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans:    var(--font-geist-sans);
+  --font-mono:    var(--font-geist-mono);
 }
 
 * {
@@ -50,15 +51,15 @@ body {
   background-clip: text;
 }
 
-/* Section divider */
+/* Section divider line */
 .gold-divider {
-  width: 64px;
-  height: 3px;
+  width: 48px;
+  height: 2px;
   background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
   border-radius: 2px;
 }
 
-/* Scrollbar styling */
+/* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--navy); }
 ::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 3px; }
