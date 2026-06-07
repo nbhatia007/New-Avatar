@@ -25,7 +25,7 @@ export default function About() {
             <div className="absolute -top-3 -left-3 w-full h-full border-2 border-[var(--gold)] opacity-30 rounded-sm" />
             <div className="relative overflow-hidden rounded-sm aspect-[3/4]">
               <Image
-                src="/images/naveen-headshot.jpg"
+                src="/ChatGPT Image Jun 6, 2026, 08_29_12 AM.png"
                 alt="Naveen Bhatia"
                 fill
                 className="object-cover object-top"
