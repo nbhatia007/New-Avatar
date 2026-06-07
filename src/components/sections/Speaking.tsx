@@ -1,13 +1,27 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Mic } from "lucide-react";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import Button from "@/components/ui/Button";
 
 const TOPICS = [
-  { cat: "Business & Leadership", items: ["Profitability Before Growth", "Growth vs Scale", "AI, Leadership & The Future of Work", "Turning Around Challenged Operations"] },
-  { cat: "Personal Growth", items: ["Building Growth With Clarity & Purpose", "Who Am I?", "Meditation, Mindfulness & Manifestation"] },
+  {
+    cat: "Business & Leadership",
+    items: [
+      "Profitability Before Growth",
+      "Growth vs Scale",
+      "AI, Leadership & The Future of Work",
+      "Turning Around Challenged Operations",
+    ],
+  },
+  {
+    cat: "Personal Growth & Awareness",
+    items: [
+      "Building Growth With Clarity & Purpose",
+      "Who Am I?",
+      "Meditation, Mindfulness & Manifestation",
+    ],
+  },
 ];
 
 export default function Speaking() {
@@ -26,18 +40,17 @@ export default function Speaking() {
             Authority.<br />Influence.<br />Impact.
           </h2>
           <div className="gold-divider mb-8" />
-
           <p className="text-[var(--gray-400)] text-base leading-relaxed mb-10">
-            Using storytelling and thought leadership to build authority,
-            attract opportunities, and create strategic partnerships.
+            30 years of real-world business experience brought to the stage.
+            Naveen speaks on leadership, profitability, AI adoption, and building
+            a life of purpose — inspiring audiences to take action and grow.
           </p>
-
           <Button href="#contact" variant="primary">
             Book Naveen to Speak
           </Button>
         </div>
 
-        <div className="space-y-8">
+        <div className="space-y-10">
           {TOPICS.map((group) => (
             <div key={group.cat}>
               <p className="text-[var(--gold)] text-xs font-semibold uppercase tracking-widest mb-4">
@@ -53,30 +66,8 @@ export default function Speaking() {
               </ul>
             </div>
           ))}
-
-          <div className="pt-8 border-t border-[var(--navy-light)]">
-            <p className="text-[var(--gray-500)] text-xs uppercase tracking-widest mb-5">3-Year Vision</p>
-            <div className="grid grid-cols-3 gap-4 text-center">
-              {[
-                { value: "1", label: "TEDx Talk" },
-                { value: "10", label: "Platforms" },
-                { value: "100", label: "Speeches" },
-              ].map((v) => (
-                <motion.div
-                  key={v.label}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                >
-                  <p className="text-[var(--gold)] text-3xl font-bold" style={{ fontFamily: "var(--font-display)" }}>
-                    {v.value}
-                  </p>
-                  <p className="text-[var(--gray-500)] text-xs mt-1">{v.label}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
         </div>
+
       </div>
     </SectionWrapper>
   );

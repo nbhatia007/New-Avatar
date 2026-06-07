@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { Home, TrendingUp, Mic } from "lucide-react";
 import SectionWrapper from "@/components/ui/SectionWrapper";
-import Button from "@/components/ui/Button";
 
 const PLATFORMS = [
   {
@@ -12,12 +11,12 @@ const PLATFORMS = [
     label: "Real Estate",
     title: "The Bhatia Team",
     tagline: "AI-Powered Luxury & Relocation Real Estate",
-    description: "Helping executives, investors, and families make confident real estate decisions in the Triangle, NC.",
-    color: "var(--gold)",
-    vision: [
-      { value: "$1M", label: "GCI" },
-      { value: "100+", label: "Transactions" },
-      { value: "10", label: "Agent Team" },
+    description:
+      "Helping executives, investors, and relocating families make confident, informed real estate decisions in the Triangle, NC — with the clarity of a trusted advisor, not just a transaction agent.",
+    outcomes: [
+      "Luxury & Relocation Specialists",
+      "Investment & Wealth Creation",
+      "Data-Driven Guidance",
     ],
     cta: "Real Estate Inquiry",
   },
@@ -27,12 +26,12 @@ const PLATFORMS = [
     label: "Consulting",
     title: "Nimbus Solutions",
     tagline: "Growth · Profitability · Scale",
-    description: "Helping founder-led businesses improve profitability, leverage AI, and scale with the Nimbus Growth OS™.",
-    color: "#4A90D9",
-    vision: [
-      { value: "1", label: "Framework" },
-      { value: "10", label: "Projects" },
-      { value: "+$100K", label: "Revenue / Year" },
+    description:
+      "Helping founder-led businesses improve profitability, strengthen operations, and leverage AI to scale sustainably — using the Nimbus Growth OS™: Build → Improve → Transform → Scale.",
+    outcomes: [
+      "Profitability Improvement",
+      "Operational Excellence",
+      "AI Enablement & Scalable Systems",
     ],
     cta: "Consulting Inquiry",
   },
@@ -42,12 +41,12 @@ const PLATFORMS = [
     label: "Speaking",
     title: "Professional Speaking",
     tagline: "Authority · Influence · Impact",
-    description: "Using storytelling and thought leadership to build authority, open doors, and create strategic partnerships.",
-    color: "#9B7EC8",
-    vision: [
-      { value: "1", label: "TEDx Talk" },
-      { value: "10", label: "Platforms" },
-      { value: "100", label: "Speeches" },
+    description:
+      "Bringing 30 years of real-world business experience to the stage — inspiring audiences on leadership, profitability, AI adoption, and building growth with clarity and purpose.",
+    outcomes: [
+      "Business & Leadership Topics",
+      "Personal Growth & Awareness",
+      "Thought Leadership & Authority",
     ],
     cta: "Speaking Inquiry",
   },
@@ -66,7 +65,10 @@ export default function Platforms() {
         >
           What I Build
         </h2>
-        <div className="gold-divider mx-auto" />
+        <div className="gold-divider mx-auto mb-5" />
+        <p className="text-[var(--gray-400)] text-base max-w-xl mx-auto">
+          Three interconnected platforms — each creating value for the people I serve.
+        </p>
       </div>
 
       <div className="grid md:grid-cols-3 gap-6">
@@ -83,16 +85,10 @@ export default function Platforms() {
               className="bg-[var(--navy-mid)] border border-[var(--navy-light)] p-8 flex flex-col hover:border-[var(--gold)]/25 transition-colors duration-300"
             >
               <div className="flex items-center justify-between mb-6">
-                <div
-                  className="w-10 h-10 flex items-center justify-center rounded-full"
-                  style={{ background: `${p.color}18` }}
-                >
-                  <Icon size={18} style={{ color: p.color }} />
+                <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--gold)]/10">
+                  <Icon size={18} className="text-[var(--gold)]" />
                 </div>
-                <span
-                  className="text-xs font-semibold uppercase tracking-widest"
-                  style={{ color: p.color }}
-                >
+                <span className="text-[var(--gold)] text-xs font-semibold uppercase tracking-widest">
                   {p.label}
                 </span>
               </div>
@@ -103,7 +99,7 @@ export default function Platforms() {
               >
                 {p.title}
               </h3>
-              <p className="text-xs font-medium tracking-wider uppercase mb-5" style={{ color: p.color }}>
+              <p className="text-[var(--gold)] text-xs font-medium tracking-wider uppercase mb-6">
                 {p.tagline}
               </p>
 
@@ -111,21 +107,18 @@ export default function Platforms() {
                 {p.description}
               </p>
 
-              <div className="grid grid-cols-3 gap-3 py-5 border-t border-b border-[var(--navy-light)] mb-6">
-                {p.vision.map((v) => (
-                  <div key={v.label} className="text-center">
-                    <p className="font-bold text-lg" style={{ color: p.color }}>
-                      {v.value}
-                    </p>
-                    <p className="text-[var(--gray-500)] text-xs mt-0.5">{v.label}</p>
-                  </div>
+              <ul className="space-y-2 mb-8">
+                {p.outcomes.map((o) => (
+                  <li key={o} className="flex items-center gap-2 text-sm text-[var(--gray-300)]">
+                    <span className="w-1 h-1 rounded-full bg-[var(--gold)] shrink-0" />
+                    {o}
+                  </li>
                 ))}
-              </div>
+              </ul>
 
               <a
                 href="#contact"
-                className="w-full text-xs py-3 flex items-center justify-center border font-semibold tracking-wide transition-all duration-200 hover:opacity-80"
-                style={{ borderColor: `${p.color}60`, color: p.color }}
+                className="w-full text-xs py-3 flex items-center justify-center border border-[var(--gold)]/40 text-[var(--gold)] font-semibold tracking-wide hover:bg-[var(--gold)]/10 transition-colors"
               >
                 {p.cta}
               </a>
