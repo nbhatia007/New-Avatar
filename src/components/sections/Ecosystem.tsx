@@ -3,108 +3,96 @@
 import { motion } from "framer-motion";
 import { Users, Handshake, UserCheck, Lightbulb } from "lucide-react";
 import SectionWrapper from "@/components/ui/SectionWrapper";
-import SectionHeading from "@/components/ui/SectionHeading";
-import Button from "@/components/ui/Button";
 
 const AUDIENCES = [
   {
     icon: Users,
     title: "Clients",
-    value: "Trusted Advisor",
-    points: ["Better Decisions", "Stronger Outcomes", "Long-Term Value"],
-    cta: "I'm a Potential Client",
-    inquiry: "Real Estate Client",
+    tagline: "Trusted Advisor",
+    desc: "Better decisions. Stronger outcomes. Long-term value.",
+    cta: "Real Estate or consulting client",
   },
   {
     icon: Handshake,
     title: "Partners",
-    value: "Strategic Relationships",
-    points: ["Shared Opportunities", "Mutual Growth", "Aligned Incentives"],
-    cta: "Explore Partnership",
-    inquiry: "Partnership",
+    tagline: "Strategic Relationships",
+    desc: "Shared opportunities, aligned incentives, mutual growth.",
+    cta: "Strategic partner or referral source",
   },
   {
     icon: UserCheck,
     title: "Agents",
-    value: "Build Your Career",
-    points: ["Grow Your Business", "Create Freedom", "Be Part of Something Bigger"],
-    cta: "Agent Opportunity",
-    inquiry: "Agent Opportunity",
+    tagline: "Build Your Career",
+    desc: "Join a team built around systems, growth, and long-term success.",
+    cta: "Real estate agent looking to grow",
   },
   {
     icon: Lightbulb,
     title: "Entrepreneurs",
-    value: "From Vision to Value",
-    points: ["Ideas to Impact", "From Start to Scale", "Practical AI Adoption"],
-    cta: "Let's Talk Business",
-    inquiry: "Business Consulting",
+    tagline: "From Vision to Value",
+    desc: "From start-up to scale-up — strategy, systems, and AI adoption.",
+    cta: "Founder or business owner",
   },
 ];
 
 export default function Ecosystem() {
   return (
     <SectionWrapper id="ecosystem" dark={true}>
-      <SectionHeading
-        eyebrow="The Growth Ecosystem"
-        title="Who I Serve"
-        subtitle="Connected by Purpose. Aligned for Growth. Built for Impact."
-        centered
-      />
+      <div className="text-center mb-14">
+        <p className="text-[var(--gold)] text-xs font-semibold uppercase tracking-widest mb-4">
+          The Growth Ecosystem
+        </p>
+        <h2
+          className="text-4xl md:text-5xl font-bold text-white mb-4"
+          style={{ fontFamily: "var(--font-display)" }}
+        >
+          Who I Serve
+        </h2>
+        <div className="gold-divider mx-auto" />
+      </div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        {AUDIENCES.map((audience, index) => {
-          const Icon = audience.icon;
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
+        {AUDIENCES.map((a, index) => {
+          const Icon = a.icon;
           return (
-            <motion.div
-              key={audience.title}
-              initial={{ opacity: 0, y: 30 }}
+            <motion.a
+              href="#contact"
+              key={a.title}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-[var(--navy-mid)] border border-[var(--navy-light)] p-6 flex flex-col hover:border-[var(--gold)]/30 transition-colors group"
+              className="bg-[var(--navy-mid)] border border-[var(--navy-light)] p-7 flex flex-col hover:border-[var(--gold)]/30 transition-colors group cursor-pointer"
             >
-              <div className="w-10 h-10 rounded-full bg-[var(--gold)]/10 flex items-center justify-center mb-4 group-hover:bg-[var(--gold)]/20 transition-colors">
+              <div className="w-10 h-10 rounded-full bg-[var(--gold)]/10 flex items-center justify-center mb-5 group-hover:bg-[var(--gold)]/20 transition-colors">
                 <Icon size={18} className="text-[var(--gold)]" />
               </div>
-
-              <h3 className="text-white font-bold text-lg mb-1">{audience.title}</h3>
+              <h3 className="text-white font-bold text-lg mb-1">{a.title}</h3>
               <p className="text-[var(--gold)] text-xs font-semibold uppercase tracking-widest mb-4">
-                {audience.value}
+                {a.tagline}
               </p>
-
-              <ul className="space-y-1.5 flex-1 mb-5">
-                {audience.points.map((p) => (
-                  <li key={p} className="text-[var(--gray-300)] text-sm flex items-start gap-2">
-                    <span className="text-[var(--gold)] text-xs mt-0.5">→</span>
-                    {p}
-                  </li>
-                ))}
-              </ul>
-
-              <Button href="#contact" variant="ghost" className="text-xs px-0 justify-start">
-                {audience.cta} →
-              </Button>
-            </motion.div>
+              <p className="text-[var(--gray-400)] text-sm leading-relaxed flex-1">
+                {a.desc}
+              </p>
+            </motion.a>
           );
         })}
       </div>
 
-      {/* Bottom statement */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-        className="mt-14 p-8 border border-[var(--gold)]/20 text-center bg-[var(--navy-mid)]"
+        transition={{ duration: 0.6, delay: 0.3 }}
+        className="border border-[var(--gold)]/20 p-8 text-center"
       >
         <p
-          className="text-white text-lg md:text-2xl font-bold leading-relaxed max-w-4xl mx-auto"
+          className="text-white text-xl md:text-2xl font-bold max-w-3xl mx-auto leading-snug"
           style={{ fontFamily: "var(--font-display)" }}
         >
-          &ldquo;I Build Growth Ecosystems That Create{" "}
-          <span className="text-gold-gradient">Opportunity, Prosperity</span> and{" "}
-          <span className="text-gold-gradient">Lasting Value</span> for Clients,
-          Partners, Agents, Entrepreneurs and Communities.&rdquo;
+          &ldquo;I build growth ecosystems that create{" "}
+          <span className="text-gold-gradient">opportunity, prosperity</span>{" "}
+          and lasting value.&rdquo;
         </p>
       </motion.div>
     </SectionWrapper>

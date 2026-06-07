@@ -2,65 +2,57 @@
 
 import Image from "next/image";
 import SectionWrapper from "@/components/ui/SectionWrapper";
-import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
 
-const DIFFERENTIATORS = [
-  "Financial Analysis & Risk Assessment",
-  "Data-Driven Decision Making",
-  "Negotiation Strategy",
-  "Systems & Process Excellence",
+const PILLARS = [
+  "30+ Years of Business Leadership",
+  "Proven Profitability & Transformation Track Record",
+  "Entrepreneurial & Investment Perspective",
   "AI-Enabled Growth Mindset",
-  "Long-Term Wealth Perspective",
 ];
 
 export default function About() {
   return (
     <SectionWrapper id="about" dark={false}>
-      <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div className="grid md:grid-cols-2 gap-16 items-center">
+
         {/* Photo */}
-        <div className="relative">
-          <div className="relative w-full max-w-sm mx-auto md:mx-0">
-            {/* Gold border accent */}
-            <div className="absolute -top-3 -left-3 w-full h-full border-2 border-[var(--gold)] opacity-30 rounded-sm" />
-            <div className="relative overflow-hidden rounded-sm aspect-[3/4]">
-              <Image
-                src="/ChatGPT Image Jun 6, 2026, 08_29_12 AM.png"
-                alt="Naveen Bhatia"
-                fill
-                className="object-cover object-top"
-                priority
-              />
-            </div>
+        <div className="relative max-w-xs mx-auto md:mx-0 w-full">
+          <div className="absolute -top-3 -left-3 w-full h-full border border-[var(--gold)]/25" />
+          <div className="relative overflow-hidden aspect-[3/4]">
+            <Image
+              src="/ChatGPT Image Jun 6, 2026, 08_29_12 AM.png"
+              alt="Naveen Bhatia"
+              fill
+              className="object-cover object-top"
+              priority
+            />
           </div>
         </div>
 
         {/* Content */}
         <div>
-          <SectionHeading
-            eyebrow="Who I Am"
-            title="Naveen The Builder"
-            subtitle="For over 30 years, I have helped organizations—from Fortune 500 enterprises to founder-led businesses—build, improve, transform, and scale."
-          />
+          <p className="text-[var(--gold)] text-xs font-semibold uppercase tracking-widest mb-4">
+            Who I Am
+          </p>
+          <h2
+            className="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            Naveen<br />The Builder
+          </h2>
+          <div className="gold-divider mb-6" />
 
-          <p className="text-[var(--gray-300)] leading-relaxed mb-6">
-            I have led complex programs, improved profitability, turned around challenged
-            initiatives, launched new ventures, and helped organizations navigate growth
-            and change. I have not only advised businesses — I have built businesses and
-            applied the same principles to create profitable and respected brands.
+          <p className="text-[var(--gray-300)] text-base leading-relaxed mb-8">
+            For 30+ years I&apos;ve helped organizations — from Fortune 500 enterprises to
+            founder-led businesses — build, improve, transform, and scale. I haven&apos;t just
+            advised businesses. I&apos;ve built them.
           </p>
 
-          <p className="text-[var(--gray-300)] leading-relaxed mb-8">
-            Today, I operate three interconnected platforms — luxury real estate, business
-            consulting, and professional speaking — each designed to create wealth, business
-            value, and lasting impact for the people I serve.
-          </p>
-
-          {/* Differentiators */}
-          <div className="grid grid-cols-2 gap-2 mb-8">
-            {DIFFERENTIATORS.map((item) => (
-              <div key={item} className="flex items-start gap-2">
-                <span className="text-[var(--gold)] mt-0.5 text-xs">▪</span>
+          <div className="space-y-3 mb-10">
+            {PILLARS.map((item) => (
+              <div key={item} className="flex items-center gap-3">
+                <span className="w-1 h-1 rounded-full bg-[var(--gold)] shrink-0" />
                 <span className="text-[var(--gray-300)] text-sm">{item}</span>
               </div>
             ))}
